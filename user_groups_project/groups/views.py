@@ -1,13 +1,12 @@
-from django.shortcuts import render
-
-# groups/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Group
 from .forms import GroupForm
 
+
 def group_list(request):
     groups = Group.objects.all()
     return render(request, 'groups/group_list.html', {'groups': groups})
+
 
 def add_group(request):
     if request.method == 'POST':
@@ -18,6 +17,7 @@ def add_group(request):
     else:
         form = GroupForm()
     return render(request, 'groups/group_form.html', {'form': form})
+
 
 def edit_group(request, group_id):
     group = get_object_or_404(Group, id=group_id)
@@ -30,9 +30,9 @@ def edit_group(request, group_id):
         form = GroupForm(instance=group)
     return render(request, 'groups/group_form.html', {'form': form, 'group': group})
 
+
 def delete_group(request, group_id):
     group = get_object_or_404(Group, id=group_id)
     if group.can_delete:
         group.delete()
     return redirect('group_list')
-

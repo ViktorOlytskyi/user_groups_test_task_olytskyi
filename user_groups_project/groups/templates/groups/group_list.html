@@ -1,9 +1,8 @@
-<!-- groups/group_list.html -->
 {% extends "base.html" %}
 <title>{% block title %}Groups{% endblock %}</title>
 {% block content %}
 
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -19,16 +18,16 @@
             <td>{{ group.name }}</td>
             <td>{{ group.description }}</td>
             <td>
-                <a href="{% url 'edit_group' group.id %}">Edit</a>
+                <a class="text-primary ps-2" href="{% url 'edit_group' group.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
                 {% if not group.can_delete %}
-                    Delete
+
                 {% else %}
-                    <a href="{% url 'delete_group' group.id %}">Delete</a>
+                    <a style="color: red" class="ps-2" href="{% url 'delete_group' group.id %}"><i class="fa-regular fa-trash-can"></i></a>
                 {% endif %}
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'add_group' %}">Add Group</a>
+<a class="btn btn-primary" href="{% url 'add_group' %}">Add Group</a>
 {% endblock %}

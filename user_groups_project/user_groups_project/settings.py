@@ -53,14 +53,13 @@ WSGI_APPLICATION = 'user_groups_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'test_task',  # Назва вашої бази даних
-        'USER': 'user',  # Ім'я користувача бази даних
-        'PASSWORD': '311991',  # Пароль користувача бази даних
-        'HOST': 'localhost',  # Хост бази даних (зазвичай 'localhost')
-        'PORT': '3306',  # Порт бази даних (зазвичай 3306)
+        'NAME': 'test_task',
+        'USER': 'user',
+        'PASSWORD': '311991',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -77,7 +76,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'uk-ua'
 
 TIME_ZONE = 'UTC'
@@ -89,9 +87,11 @@ USE_TZ = True
 ROOT_URLCONF = 'user_groups_project.urls'
 
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
