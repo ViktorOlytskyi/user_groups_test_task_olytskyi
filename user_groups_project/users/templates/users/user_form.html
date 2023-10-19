@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if user %}
+        edit user
+    {% else %}
+        add user
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>
+        {% if user %}
+            edit user
+        {% else %}
+            add user
+        {% endif %}
+    </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">save</button>
+        <a href="{% url 'user_list' %}" class="btn btn-secondary">cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!-- groups/group_list.html -->
+{% extends "base.html" %}
+<title>{% block title %}Groups{% endblock %}</title>
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.id }}</td>
+            <td>{{ group.name }}</td>
+            <td>{{ group.description }}</td>
+            <td>
+                <a href="{% url 'edit_group' group.id %}">Edit</a>
+                {% if not group.can_delete %}
+                    Delete
+                {% else %}
+                    <a href="{% url 'delete_group' group.id %}">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'add_group' %}">Add Group</a>
+{% endblock %}
