@@ -56,7 +56,7 @@ DATABASES = {
         'NAME': 'test_task',
         'USER': 'user',
         'PASSWORD': '311991',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
@@ -75,6 +75,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ALLOWED_HOSTS = ['0.0.0.0']
 
 LANGUAGE_CODE = 'uk-ua'
 
