@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-qp^@^)u$$gkr9rqwb_!fl+!)v6=o+9=6%7s02tk@8dv!a5jv0h
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,8 +75,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-ALLOWED_HOSTS = ['0.0.0.0']
 
 LANGUAGE_CODE = 'uk-ua'
 
